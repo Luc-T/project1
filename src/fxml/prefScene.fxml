@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="767.0" prefWidth="789.0" style="-fx-background-color: #2e7d32;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="entity.Main">
+   <children>
+      <AnchorPane layoutX="12.0" layoutY="14.0" prefHeight="308.0" prefWidth="1011.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="771.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <children>
+            <JFXListView layoutX="533.0" layoutY="46.0" prefHeight="236.0" prefWidth="280.0" style="-fx-background-color: #FBFBFB;" />
+            <JFXButton buttonType="RAISED" layoutX="83.0" layoutY="151.0" prefHeight="25.0" prefWidth="44.0" ripplerFill="#005005" style="-fx-background-color: #60ad5e;" text="Add" textFill="WHITE" />
+            <JFXTextField focusColor="#2e7d32" labelFloat="true" layoutX="23.0" layoutY="72.0" prefHeight="25.0" prefWidth="164.0" promptText="Enter ingredients you want" />
+            <Label layoutX="261.0" layoutY="14.0" text="Favourite ingredients" underline="true">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" />
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="12.0" layoutY="393.0" prefHeight="352.0" prefWidth="763.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <JFXListView layoutX="469.0" layoutY="72.0" prefHeight="236.0" prefWidth="280.0" style="-fx-background-color: #FBFBFB;" />
+            <JFXButton buttonType="RAISED" layoutX="83.0" layoutY="151.0" prefHeight="25.0" prefWidth="44.0" ripplerFill="#005005" style="-fx-background-color: #60ad5e;" text="Add" textFill="WHITE" />
+            <JFXTextField focusColor="#2e7d32" labelFloat="true" layoutX="23.0" layoutY="72.0" prefHeight="25.0" prefWidth="164.0" promptText="Enter ingredients you want" />
+            <Label layoutX="261.0" layoutY="14.0" text="Favourite ingredients" underline="true">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>
