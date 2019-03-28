@@ -8,34 +8,40 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="767.0" prefWidth="789.0" style="-fx-background-color: #2e7d32;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="entity.Main">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="840.0" style="-fx-background-color: #2e7d32;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="entityControllers.PrefSceneController">
    <children>
-      <AnchorPane layoutX="12.0" layoutY="14.0" prefHeight="308.0" prefWidth="1011.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="771.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <AnchorPane layoutX="12.0" layoutY="14.0" prefHeight="290.0" prefWidth="820.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <children>
-            <JFXListView layoutX="533.0" layoutY="46.0" prefHeight="236.0" prefWidth="280.0" style="-fx-background-color: #FBFBFB;" />
-            <JFXButton buttonType="RAISED" layoutX="83.0" layoutY="151.0" prefHeight="25.0" prefWidth="44.0" ripplerFill="#005005" style="-fx-background-color: #60ad5e;" text="Add" textFill="WHITE" />
-            <JFXTextField focusColor="#2e7d32" labelFloat="true" layoutX="23.0" layoutY="72.0" prefHeight="25.0" prefWidth="164.0" promptText="Enter ingredients you want" />
+            <JFXListView fx:id="likeList" layoutX="526.0" layoutY="33.0" prefHeight="236.0" prefWidth="280.0" style="-fx-background-color: #FBFBFB;" />
+            <JFXButton fx:id="likeAdd" buttonType="RAISED" layoutX="83.0" layoutY="151.0" onAction="#addLike" prefHeight="25.0" prefWidth="44.0" ripplerFill="#005005" style="-fx-background-color: #60ad5e;" text="Add" textFill="WHITE" />
+            <JFXTextField fx:id="likeText" focusColor="#2e7d32" labelFloat="true" layoutX="23.0" layoutY="72.0" maxWidth="-Infinity" prefHeight="25.0" prefWidth="186.0" promptText="Enter ingredients you want" />
             <Label layoutX="261.0" layoutY="14.0" text="Favourite ingredients" underline="true">
                <font>
                   <Font size="26.0" />
                </font>
             </Label>
+            <JFXButton fx:id="likeRemove" buttonType="RAISED" layoutX="445.0" layoutY="151.0" onAction="#removeLike" prefHeight="25.0" prefWidth="63.0" ripplerFill="#005005" style="-fx-background-color: #60ad5e;" text="Remove" textFill="WHITE" />
          </children>
          <effect>
             <DropShadow blurType="GAUSSIAN" />
          </effect>
       </AnchorPane>
-      <AnchorPane layoutX="12.0" layoutY="393.0" prefHeight="352.0" prefWidth="763.0" style="-fx-background-color: #FFFFFF;">
+      <AnchorPane layoutX="12.0" layoutY="295.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="813.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <children>
-            <JFXListView layoutX="469.0" layoutY="72.0" prefHeight="236.0" prefWidth="280.0" style="-fx-background-color: #FBFBFB;" />
-            <JFXButton buttonType="RAISED" layoutX="83.0" layoutY="151.0" prefHeight="25.0" prefWidth="44.0" ripplerFill="#005005" style="-fx-background-color: #60ad5e;" text="Add" textFill="WHITE" />
-            <JFXTextField focusColor="#2e7d32" labelFloat="true" layoutX="23.0" layoutY="72.0" prefHeight="25.0" prefWidth="164.0" promptText="Enter ingredients you want" />
-            <Label layoutX="261.0" layoutY="14.0" text="Favourite ingredients" underline="true">
+            <JFXListView fx:id="dislikeList" layoutX="526.0" layoutY="27.0" prefHeight="236.0" prefWidth="280.0" style="-fx-background-color: #FBFBFB;" />
+            <JFXButton fx:id="dislikeAdd" buttonType="RAISED" layoutX="83.0" layoutY="151.0" onAction="#addDislike" prefHeight="25.0" prefWidth="44.0" ripplerFill="#005005" style="-fx-background-color: #60ad5e;" text="Add" textFill="WHITE" />
+            <JFXTextField fx:id="dislikeText" focusColor="#2e7d32" labelFloat="true" layoutX="23.0" layoutY="72.0" prefHeight="25.0" prefWidth="186.0" promptText="Enter ingredients you dont want" />
+            <Label layoutX="297.0" layoutY="8.0" text="Disliked ingredients" underline="true">
                <font>
                   <Font size="26.0" />
                </font>
             </Label>
+            <JFXButton fx:id="dislikeRemove" buttonType="RAISED" layoutX="448.0" layoutY="151.0" onAction="#removeDislike" prefHeight="25.0" prefWidth="63.0" ripplerFill="#005005" style="-fx-background-color: #60ad5e;" text="Remove" textFill="WHITE" />
+            <JFXButton fx:id="doneBtn" buttonType="RAISED" layoutX="326.0" layoutY="244.0" onAction="#openRecipes" prefHeight="38.0" prefWidth="99.0" ripplerFill="#005005" style="-fx-background-color: #60ad5e;" text="Get Recipes" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
          </children>
          <effect>
             <DropShadow blurType="GAUSSIAN" />

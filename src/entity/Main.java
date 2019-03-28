@@ -31,9 +31,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("prefScene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/prefScene.fxml"));
         primaryStage.setTitle("Scran Plan");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 840, 610));
         primaryStage.show();
     }
 
