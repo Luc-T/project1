@@ -17,7 +17,6 @@ public class RecipeController {
     private String APIKEY = "cc76510f453b696d7442e5e337cc431f";
 
     private ArrayList<Recipe> recipes = new ArrayList<>();
-    private enum healthLabels{};
 
     public void addRecipe(Recipe recipe) {
         this.recipes.add(recipe);
@@ -27,6 +26,13 @@ public class RecipeController {
         this.recipes.remove(recipe);
     }
 
+    public ArrayList<Recipe> getRecipes() {
+        return recipes;
+    }
+
+    public void setRecipes(ArrayList<Recipe> recipes) {
+        this.recipes = recipes;
+    }
 
     public String replaceSpacesInString(String stringToEdit, String replacement){
         return stringToEdit.replaceAll(" ",replacement);

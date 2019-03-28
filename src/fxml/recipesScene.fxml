@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1040.0" style="-fx-background-color: #2e7d32;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.recipesSceneController">
+   <children>
+      <AnchorPane layoutX="12.0" layoutY="14.0" prefHeight="578.0" prefWidth="813.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <children>
+            <JFXListView fx:id="recipesListView" layoutX="11.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="792.0" style="-fx-background-color: #FBFBFB;" AnchorPane.bottomAnchor="56.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+            <JFXButton fx:id="goBackButton" buttonType="RAISED" layoutX="928.0" layoutY="669.0" onAction="#goToPreferencesPage" prefHeight="25.0" prefWidth="76.0" ripplerFill="#005005" style="-fx-background-color: #60ad5e;" text="Go back" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="10.0" />
+            <Text fx:id="secondsText" layoutX="735.0" layoutY="686.0" strokeType="OUTSIDE" strokeWidth="0.0" text="seconds until you can redo search" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="99.62109375" />
+            <Text fx:id="secondsNumber" layoutX="719.0" layoutY="686.0" strokeType="OUTSIDE" strokeWidth="0.0" text="60" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="285.0" />
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>

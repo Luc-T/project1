@@ -24,6 +24,14 @@ public class Recipe {
     //TotalDaily TotalDailyObject;
     //ArrayList < Object > digest = new ArrayList < Object > ();
 
+    public ArrayList<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(ArrayList<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+
 
     // Getter Methods
 
