@@ -17,6 +17,7 @@ public class RecipeController {
     private String APIKEY = "cc76510f453b696d7442e5e337cc431f";
 
     private ArrayList<Recipe> recipes = new ArrayList<>();
+    private enum healthLabels{};
 
     public void addRecipe(Recipe recipe) {
         this.recipes.add(recipe);
@@ -31,14 +32,42 @@ public class RecipeController {
         return stringToEdit.replaceAll(" ",replacement);
     }
 
-    public URL generateUrl(String ingredients, String excludedIngredients) throws IOException {
-        String query = replaceSpacesInString(ingredients, "%2C+");
+    private String generateIngredientsQuery(ArrayList<String> ingredients){
+        String foodQuery = "";
+        if (ingredients != null) {
+            for (String ingredient : ingredients) {
+                if (foodQuery.equals("")) {
+                    String ingredientNoSpaces = replaceSpacesInString(ingredient, "+");
+                    foodQuery += "q=" + ingredientNoSpaces;
+                } else {
+                    String ingredientNoSpaces = replaceSpacesInString(ingredient, "+");
+                    foodQuery += "+" + ingredientNoSpaces;
+                }
+            }
+        }
+        return foodQuery;
+    }
+
+    private String generateIngredientsNotWantedQuery(ArrayList<String> ingredients) {
+        String foodQuery = "";
+        if (ingredients != null) {
+            for (String ingredient : ingredients) {
+                String ingredientNoSpaces = replaceSpacesInString(ingredient, "+");
+                foodQuery += "&excluded=" + ingredientNoSpaces;
+            }
+        }
+        return foodQuery;
+    }
+
+    public URL generateUrl(ArrayList <String> ingredients, ArrayList<String> excludedIngredients) throws IOException {
+        String foodQuery = generateIngredientsQuery(ingredients);
+        String foodNotWantedQuery = generateIngredientsNotWantedQuery(excludedIngredients);
         URL path = new URL("https://api.edamam.com/search?");
-        if (excludedIngredients == null) {
-            URL url = new URL(path +"q=" + query +"&app_id=" + APIID + "&app_key=" + APIKEY);
+        if (excludedIngredients == null||excludedIngredients.isEmpty()) {
+            URL url = new URL(path + foodQuery +"&app_id=" + APIID + "&app_key=" + APIKEY);
             return url;
         } else {
-            URL url = new URL(path +"q=" + query +"&app_id=" + APIID + "&app_key=" + APIKEY);
+            URL url = new URL(path + foodQuery +"&app_id=" + APIID + "&app_key=" + APIKEY + foodNotWantedQuery );
             return url;
         }
     }
@@ -85,7 +114,7 @@ public class RecipeController {
 
     }
 
-    public void getNewRecipes(String ingredients, String ingredientsToExclude) throws IOException{
+    public void getNewRecipes(ArrayList<String> ingredients, ArrayList <String> ingredientsToExclude) throws IOException{
 //        if(jsonToObject(parseURL(generateUrl(ingredients,ingredientsToExclude)))==null){
 //            throw new NullPointerException("No recipes found");
 //        }
@@ -105,10 +134,17 @@ public class RecipeController {
 
     public static void main(String[] args) throws IOException {
         RecipeController recipes = new RecipeController();
-        System.out.println(recipes.generateUrl("bread",null));
-        //recipes.jsonToRecipes();
-        System.out.println(recipes);
-        recipes.getNewRecipes("bread bacon",null);
+        ArrayList<String> ingredients = new ArrayList<>();
+        ingredients.add("bread");
+        ingredients.add("bacon");
+
+        ArrayList<String> ingredientsNotWanted = new ArrayList<>();
+        ingredientsNotWanted.add("cheese");
+        ingredientsNotWanted.add("egg");
+
+        System.out.println(recipes.generateUrl(ingredients,ingredientsNotWanted));
+        System.out.println(recipes.generateUrl(ingredients,null));
+        recipes.getNewRecipes(ingredients,ingredientsNotWanted);
         System.out.println(recipes);
     }
 }

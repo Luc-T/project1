@@ -16,11 +16,10 @@ public class Recipe {
     //ArrayList < Object > dietLabels = new ArrayList < Object > ();
     //private enum healthLabels{vegan, vegetarian, paleo, dairy-free, gluten-free, wheat-free, fat-free, low-sugar, egg-free, peanut-free, tree-nut-free, soy-free, fish-free, shellfish-free};
     //ArrayList < Object > cautions = new ArrayList< Object >();
-    //ArrayList < Object > ingredientLines = new ArrayList < Object > ();
+    ArrayList < String > ingredientLines = new ArrayList < String > ();
     ArrayList <Ingredient> ingredients = new ArrayList<>();
     private float calories;
     private float totalWeight;
-    private String time;
     //TotalNutrients TotalNutrientsObject;
     //TotalDaily TotalDailyObject;
     //ArrayList < Object > digest = new ArrayList < Object > ();
@@ -68,11 +67,7 @@ public class Recipe {
         return totalWeight;
     }
 
-    public String getTotalTime() {
-        return time;
-    }
-
-//    public TotalNutrients getTotalNutrients() {
+    //    public TotalNutrients getTotalNutrients() {
 //        return TotalNutrientsObject;
 //    }
 //
@@ -118,10 +113,6 @@ public class Recipe {
         this.totalWeight = totalWeight;
     }
 
-    public void setTotalTime(String totalTime) {
-        this.time = totalTime;
-    }
-
 //    public void setTotalNutrients(TotalNutrients totalNutrientsObject) {
 //        this.TotalNutrientsObject = totalNutrientsObject;
 //    }
@@ -144,7 +135,6 @@ public class Recipe {
                 ", ingredients=" + ingredients +
                 ", calories=" + calories +
                 ", totalWeight=" + totalWeight +
-                ", totalTime=" + time +
                 '}';
     }
 }
