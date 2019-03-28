@@ -55,8 +55,8 @@ public class recipesSceneController implements Initializable{
     @FXML
     private void goToPreferencesPage(ActionEvent event) throws IOException {
         Window currentWindow = goBackButton.getScene().getWindow();
-        currentWindow.setWidth(880);
-        currentWindow.setHeight(660);
+        currentWindow.setWidth(870);
+        currentWindow.setHeight(655);
         Parent newRoot = FXMLLoader.load(getClass().getResource("../fxml/prefScene.fxml"));
         currentWindow.getScene().setRoot(newRoot);
     }
